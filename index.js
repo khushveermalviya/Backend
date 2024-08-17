@@ -85,7 +85,7 @@ app.use(Studentadd)
 app.use(Studentlist);
 app.use(Studentdetails);
 app.use(Studentdelete);
-const PORT = 3334;
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
