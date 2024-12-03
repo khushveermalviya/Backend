@@ -1,4 +1,4 @@
-
+import express from 'express';
 import Pool from '../db/Database.js';
 import app from "../App/App.js";
 
