@@ -5,12 +5,12 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"No tests specified\" && exit 0",
-    "dev": "nodemon index.js",
-    "json:server": "json-server --watch db.json",
-    "build": "echo \"Building the app...\"",
-    "build:azure": "npm run build"
-  },
+      "test": "echo \"No tests specified\"",
+      "dev": "nodemon index.js",
+      "json:server": "json-server --watch db.json",
+      "build": "echo \"Building the app...\"",
+      "build:azure": "npm run build"
+    },
   "author": "",
   "license": "ISC",
   "dependencies": {
