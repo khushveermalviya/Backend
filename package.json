@@ -5,29 +5,30 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-      "test": "echo \"No tests specified\"",
-      "dev": "nodemon index.js",
-      "json:server": "json-server --watch db.json",
-      "build": "echo \"Building the app...\"",
-      "build:azure": "npm run build"
-    },
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "json:server": "json-server --watch db.json",
+    "build": "echo \"No build step required for this backend application.\"",
+    "build:azure": "npm install"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@apollo/server": "^4.11.2",
     "apollo-server-express": "^3.13.0",
+    "axios": "^1.7.3",
     "cors": "^2.8.5",
+    "crypto": "^1.0.1",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "graphql": "^16.9.0",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.3.0",
     "graphql-tag": "^2.12.6",
-    "jsonwebtoken": "^9.0.2",
+    "json-server": "^1.0.0-beta.3",
     "lodash": "^4.17.21",
     "mssql": "^11.0.1",
-    "nodemon": "^3.1.4",
-    "pg": "^8.12.0"
+    "nodemon": "^3.1.4"
   },
   "engines": {
-    "node": ">=18.20.5"
+    "node": "18.20.4"
   }
 }
