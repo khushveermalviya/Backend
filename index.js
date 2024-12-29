@@ -4,7 +4,7 @@ import cors from "cors";
 import { graphqlHTTP } from 'express-graphql';
 import schema from "./Schema/Schema.js";
 import AzureDb from './db/SecondDb.js';
-import { authMiddleware, authenticate } from './middleware/Auth.js'; // Import both middlewares
+import authMiddleware from './middleware/Auth.js'; // Import both middlewares
 
 dotenv.config();
 
@@ -17,18 +17,12 @@ app.use(authMiddleware); // Apply general authentication middleware to all route
 
 app.use('/graphql', graphqlHTTP({
   schema,
-  graphiql: true
+  graphiql: true,
+  customFormatErrorFn: (err) => {
+    console.error(err);
+    return { message: err.message, locations: err.locations, stack: err.stack ? err.stack.split('\n') : [], path: err.path };
+  },
 }));
-
-// Example of protecting a route for students
-app.get('/student-route', authenticate('student'), (req, res) => {
-  res.send('Welcome, student!');
-});
-
-// Example of protecting a route for faculty
-app.get('/admin/adminPanel', authenticate('faculty'), (req, res) => {
-  res.send('Welcome, faculty!');
-});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
