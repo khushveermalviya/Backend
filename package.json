@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js",
     "json:server": "json-server --watch db.json",
-    "build": "echo \"Building the app...\"",
+     "build": "Nodejs build --output public",
     "build:azure": "npm run build"
   },
   "author": "",
@@ -29,6 +29,6 @@
     "nodemon": "^3.1.4"
   },
   "engines": {
-    "node": "18.20.4"
+    "node": "v22.9.0"
   }
 }
